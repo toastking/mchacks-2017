@@ -1,0 +1,10 @@
+/* page entry for journal */
+body {
+    background: #674EA7;
+    padding: 50px;
+}
+.editable {
+    background: #8e7cc3;
+    color: white;
+    padding: 50px;
+}

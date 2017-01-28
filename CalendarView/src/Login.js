@@ -28,6 +28,23 @@ class Login extends Component {
     this.setState({signup: true});
   }
 
+  renderSwitch() {
+    if (this.state.signup) {
+        return (
+        <a href="#" id="login-form-link" onClick={this.changeToLogin}>
+            <div className="login">LOGIN</div>
+        </a>
+        );
+    }
+    else {
+        return (
+        <a href="#" id="signup-form-link" onClick={this.changeToSignup}>
+            <div className="signup">SIGN UP</div>
+        </a>
+        );
+    }
+  }
+
   render() {
     return (
         <div className="container">
@@ -43,12 +60,7 @@ class Login extends Component {
                     </div>
                     <div className="panel-heading">
                     <div className="row">
-                        <div className="col-xs-6 tabs">
-                        <a href="#" className="active" id="login-form-link" onClick={this.changeToLogin}><div className="login">LOGIN</div></a>
-                        </div>
-                        <div className="col-xs-6 tabs">
-                        <a href="#" id="signup-form-link" onClick={this.changeToSignup} ><div className="signup">SIGN UP</div></a>
-                        </div>
+                        {this.renderSwitch()}
                     </div>
                     </div>
                 </div>

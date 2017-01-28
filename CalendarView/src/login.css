@@ -8,7 +8,7 @@ body {
 
 body{
     width: 100%;
-    /*Todo Add our colors 
+    /*Todo Add our colors */
     background: -webkit-linear-gradient(left, red,orange,yellow,green,blue, indigo,violet, red,orange,yellow,green,blue,indigo,violet);
     background: -moz-linear-gradient(left, red,orange,yellow,green,blue, indigo,violet, red,orange,yellow,green,blue,indigo,violet);
     background: linear-gradient(to right, red,orange,yellow,green,blue, indigo,violet, red,orange,yellow,green,blue,indigo,violet);
@@ -16,7 +16,7 @@ body{
     -webkit-animation: JournalBackground 20s ease infinite;
     -moz-animation: JournalBackground 20s ease infinite;
     animation:JournalBackground 20s ease infinite;
-    background-blend-mode:multiply;*/
+    background-blend-mode:multiply;
 
 }
 

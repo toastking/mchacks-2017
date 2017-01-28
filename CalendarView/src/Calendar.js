@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import CalendarGrid from './CalendarGrid';
 
+var monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
 class Calendar extends Component {
     constructor(props) {
         super(props);
@@ -51,8 +53,6 @@ class Calendar extends Component {
         return partialCalendar.concat(this.daysAfterMonth(year, month));
     }
 
-
-
     minusOneMonth() {
         var currentMonth = this.state.month
         var currentYear = this.state.year
@@ -78,7 +78,7 @@ class Calendar extends Component {
     render() {
         return (
             <div className="Calendar">
-                {this.state.month}
+                {monthNames[this.state.month]}
                 <br />
                 <input type="button" onClick={this.minusOneMonth}/>
                 {this.state.year}

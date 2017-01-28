@@ -47,7 +47,7 @@ class Login extends Component {
 
   render() {
     return (
-        <div className="container">
+        <div id="Login" className="container">
             <div className="row">
                 <div className="col-md-6 col-md-offset-3">
                 <div className="panel panel-login">

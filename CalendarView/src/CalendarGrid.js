@@ -20,7 +20,7 @@ class CalendarGrid extends Component {
 
     render() {
         return (
-            <div className="CalendarGrid">
+            <div className="CalendarGrid col-md-12">
                 {this.renderWeeks()}
             </div>
         );

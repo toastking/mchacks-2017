@@ -5,9 +5,8 @@ var database = firebase.database;
 
 class PostModel {
 
-  constructor(user, uid, text, sentiment,date_posted ){
-    this.user = user;
-    this.uid = uid;
+  constructor(text, sentiment,date_posted ){
+    this.user = this.uid = firebase.auth().currentUser.uid;
     this.text = text;
     this.sentiment = sentiment;
     this.date_posted = date_posted;
@@ -17,7 +16,7 @@ class PostModel {
 
   //method to save the post to fireabse
   savePost(){
-  debugger;
+  debugger; //TODO: remove debugger statement
   console.log(JSON.stringify(this));
     //push the stringified verson of hte json string
     ref.push(JSON.stringify(this));

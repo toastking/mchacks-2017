@@ -4,18 +4,20 @@ var database = firebase.database;
 var ref;
 
 class UserModel {
-    constructor(email, user, posts) {
+    constructor(emails) {
         this.email = email;
-        this.user = user;
+        this.user = firebase.auth().currentUser.uid;
         this.posts = [];
+
         ref = database.ref("users/" + this.user + "/posts");
+        this.getPosts(); //get the posts
     }
     updatePosts(newPost) {
         this.posts = newPost;
     }
 
     getPosts() {
-        starCountRef.on('value', function(snapshot) {
+        ref.on('value', function(snapshot) {
             updatePosts(snapshot.val());
         });
     }

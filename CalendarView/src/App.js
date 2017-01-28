@@ -1,21 +1,28 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+import Calendar from './Calendar';
+import Login from './Login';
+
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+  constructor(props) {
+    super(props);
+    this.state = {userStatus: 'login'}
   }
-}
+
+  render() {
+    if (this.state.userStatus === 'login') {
+      return (<div className="App">
+          <Login />
+        </div>)
+    }
+    if (this.state.userStatus === 'calendar') {
+      return (
+        <div className="App">
+          <Calendar />
+        </div>
+      );
+    }
+  }
+};
 
 export default App;

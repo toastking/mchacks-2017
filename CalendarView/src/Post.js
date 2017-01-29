@@ -35,6 +35,7 @@ class Post extends Component {
   editPost() {
     this.setState({oldText: this.state.text, editable: true});
     document.getElementById("post").contentEditable = 'true';
+    document.getElementById("post").focus();
   }
 
     savePost() {

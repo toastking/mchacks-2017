@@ -4,9 +4,13 @@ import './CalendarRow.css'
 
 class CalendarRow extends Component {
     renderWeek() {
-        return this.props.days.map(day => (
-            <CalendarDate key={day} day={day} />
-        ));
+        var weekElements = [];
+        var i;
+        for (i = 0; i < 7; i++) {
+            var date = this.props.days[i];
+            weekElements.push((<CalendarDate key={date} day={date} inMonth={true} selDate={this.props.selDate}/>));
+        }
+        return weekElements;
     }
 
     render() {

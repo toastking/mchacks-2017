@@ -16,7 +16,6 @@ class PostModel {
 
   //method to save the post to firebase
   savePost(){
-  debugger; //TODO: remove debugger statement
   console.log(JSON.stringify(this));
     //push the stringified verson of the json string
     ref.push(JSON.stringify(this));

@@ -1,3 +1,8 @@
 .CalendarRow {
-    height: 14.2857142857vh;
+    height: 13vw;
+}
+
+.NotInMonth {
+    background-color: cyan;
+    color: white;
 }

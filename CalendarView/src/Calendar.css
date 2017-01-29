@@ -1,7 +1,17 @@
-.MonthDisplay {
+#MonthDisplay {
     text-align: center;
 }
 
-.MonthNav {
+#MonthNav {
     text-align: center;
+}
+
+#CalendarGrid {
+    margin-top: 20px;
+}
+
+
+.CalendarDate {
+    border: 1px solid lightgrey;
+    padding: 10px;
 }

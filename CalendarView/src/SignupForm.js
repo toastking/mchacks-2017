@@ -28,10 +28,17 @@ class SignupForm extends Component {
         <form id="signup-form" action="#"  role="form">
             <h2>Sign Up</h2>
             <div className="form-group">
+<<<<<<< HEAD
                 <input type="text" name="username" id="username" tabIndex="1" className="form-control" placeholder="Name" />
             </div>
             <div className="form-group">
                 <input type="email" name="email" id="email" tabIndex="1" className="form-control" placeholder="Email Address" />
+=======
+                <input type="text" name="username" id="username" tabIndex="1" className="form-control" placeholder="Name"/>
+            </div>
+            <div className="form-group">
+                <input type="email" name="email" id="email" tabIndex="1" className="form-control" placeholder="Email Address"/>
+>>>>>>> b9c11817b0b91b3274a6ff049e96c0720c438040
             </div>
             <div className="form-group">
                 <input type="password" name="password" id="password" tabIndex="2" className="form-control" placeholder="Password"/>
@@ -42,7 +49,7 @@ class SignupForm extends Component {
             <div className="form-group">
                 <div className="row">
                 <div className="col-sm-6 col-sm-offset-3">
-                    <input  type="submit" onClick ={this.createAccount} name="signup-submit" id="signup-submit" tabIndex="4" className="form-control btn btn-signup" value="Sign Up"/>
+                    <input type="submit" name="signup-submit" id="signup-submit" tabIndex="4" className="form-control btn btn-signup" value="Sign Up"/>
                 </div>
                 </div>
             </div>

@@ -22,7 +22,13 @@ class App extends Component {
 
 
   handleLogin(){
-    this.setState({'userStatus':'post'});
+    this.state = {userStatus: 'calendar', date: new Date()}
+    this.selectedDate = this.selectedDate.bind(this);
+  }
+
+  selectedDate(selDate) {
+    this.setState({date: selDate, userStatus: 'post'});
+    console.log(selDate);
   }
 
   render() {
@@ -34,14 +40,14 @@ class App extends Component {
     if (this.state.userStatus === 'calendar') {
       return (
         <div className="App">
-          <Calendar />
+          <Calendar selDate={this.selectedDate}/>
         </div>
       );
     }
     if (this.state.userStatus === 'post') {
       return (
         <div className="App">
-          <Post />
+          <Post date={this.props.date}/>
         </div>
       );
     }

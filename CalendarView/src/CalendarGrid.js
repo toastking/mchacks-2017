@@ -12,12 +12,12 @@ class CalendarGrid extends Component {
         while (a.length > 0)
             arrays.push(a.splice(0, size));
 
-        return arrays
+        return arrays;
     }
 
     renderWeeks() {
         return this.splitArray(7).map(dayChunk => (
-            <CalendarRow key={dayChunk} days={dayChunk} month={this.props.month} year={this.props.year}/>
+            <CalendarRow key={dayChunk} days={dayChunk} month={this.props.month} year={this.props.year} selDate={this.props.selDate}/>
         ));
     }
 

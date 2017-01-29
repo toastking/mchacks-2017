@@ -28,14 +28,18 @@ this.done();
         <form id="login-form" role="form">
             <h2>LOGIN</h2>
             <div className="form-group">
+<<<<<<< HEAD
                 <input type="text" name="username" id="username" tabIndex="1" className="form-control" placeholder="Email" />
+=======
+                <input type="text" name="username" id="username" tabIndex="1" className="form-control" placeholder="Name"/>
+>>>>>>> b9c11817b0b91b3274a6ff049e96c0720c438040
             </div>
             <div className="form-group">
                 <input type="password" name="password" id="password" tabIndex="2" className="form-control" placeholder="Password"/>
             </div>
             <div className="col-xs-6 form-group pull-left checkbox">
                 <input id="checkbox1" type="checkbox" name="remember"/>
-                <label htmlFor="checkbox1">Remember Me</label>
+                <label htmlFor="checkbox1">Remember Me</label>   
             </div>
             <div className="col-xs-6 form-group pull-right">
                     <input type="button" onClick = {this.signIn} name="login-submit" id="login-submit" tabIndex="4" className="form-control btn btn-login" value="Log In"/>

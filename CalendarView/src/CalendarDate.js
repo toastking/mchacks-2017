@@ -14,7 +14,7 @@ class CalendarGrid extends Component {
     render() {
         if (this.props.day < 0) {
             return (
-                <div className="CalendarDate NotInMonth">
+                <div className="CalendarDate">
                 </div>
             );
         }

@@ -60,7 +60,7 @@ class Calendar extends Component {
 
     selectedDate(selDate) {
         this.setState({date: selDate});
-        this.props.selDate(new Date(this.state.year, this.state.month, this.state.date))
+        this.props.selDate(new Date(this.state.year, this.state.month, selDate));
     }
 
     daysInMonth(year, month) {
@@ -115,6 +115,7 @@ class Calendar extends Component {
     render() {
         return (
             <div className="Calendar">
+                <button type="button" className="btn btn-default pull-right">Logout</button>
                 <div id="MonthDisplay" className="col-md-12">
                     <h1>{monthNames[this.state.month]}</h1>
                 </div>

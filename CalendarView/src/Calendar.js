@@ -122,12 +122,13 @@ class Calendar extends Component {
         return (
             <div className="Calendar">
                 <button type="button" onClick={this.signout} className="btn btn-default pull-right">Logout</button>
+
                 <div id="MonthDisplay" className="col-md-12">
                     <h1>{monthNames[this.state.month]}</h1>
                 </div>
                 <div id="MonthNav" className="col-md-12">
                     <div className="col-xs-1">
-                        <button type="button" className="btn btn-info" onClick={this.minusOneMonth}>
+                        <button type="button" className="btn btn-default" onClick={this.minusOneMonth}>
                             Prev
                         </button>
                     </div>
@@ -135,7 +136,7 @@ class Calendar extends Component {
                         {this.state.year}
                     </div>
                     <div className="col-xs-1">
-                        <button type="button" className="btn btn-info" onClick={this.plusOneMonth}>
+                        <button type="button" className="btn btn-default" onClick={this.plusOneMonth}>
                             Next
                         </button>
                     </div>

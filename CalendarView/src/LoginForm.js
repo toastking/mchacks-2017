@@ -12,15 +12,15 @@ class LoginForm extends Component {
   }
 
   signIn(){
-    var email = $("#username").val(),
-    password = $("#password").val();
-    firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-  // Handle Errors here.
-  var errorCode = error.code;
-  var errorMessage = error.message;
-  alert(errorMessage);
-});
-this.done();
+        var email = $("#username").val(),
+        password = $("#password").val();
+        firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+          // Handle Errors here.
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          alert(errorMessage);
+        });
+        this.done();
   }
   render() {
     return (

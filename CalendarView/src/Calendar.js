@@ -28,6 +28,7 @@ class Calendar extends Component {
       console.log(posts);
       this.setState({posts:posts});
     }
+    
     componentWillMount(){
 
       var user = firebase.auth().currentUser;

@@ -23,7 +23,6 @@ class App extends Component {
   }
 
   handleLogin(){
-    debugger;
     this.setState({userStatus: 'calendar', date: new Date()});
     this.selectedDate = this.selectedDate.bind(this);
   }
@@ -42,6 +41,7 @@ class App extends Component {
   }
 
  signout(){
+   console.log("hello");
     firebase.auth().signOut().then(function() {
             console.log('Signed Out');
     }, function(error) {

@@ -26,6 +26,8 @@ class Post extends Component {
     this.setState({text: event.target.value})
   }
 
+  /* State-based rendering functions */
+
   renderPost() {
     if (this.state.editable) {
         return (
@@ -36,8 +38,6 @@ class Post extends Component {
         return this.state.text;
     }
   }
-
-  /* State-based rendering functions */
 
   renderOptions() {
     if (this.state.editable) {

@@ -49,10 +49,12 @@ class Post extends Component {
             console.error('no user signed in ');
         }
 
-        var txt = $(".editor").val();
+        var txt = document.getElementById("post").innerText;
+        console.log("Printing Text");
+        console.log(txt);
         this.database.ref('user/'+user.uid+'/posts').push({
           text:txt,
-          date:null,
+          date:this.props.date.toString(),
           sentiment:null
         });
     }

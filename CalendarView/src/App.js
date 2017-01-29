@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import Calendar from './Calendar';
 import Login from './Login';
+import Post from './Post';
 
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {userStatus: 'calendar'}
+    this.state = {userStatus: 'post'}
   }
 
   render() {
@@ -19,6 +20,13 @@ class App extends Component {
       return (
         <div className="App">
           <Calendar />
+        </div>
+      );
+    }
+    if (this.state.userStatus === 'post') {
+      return (
+        <div className="App">
+          <Post />
         </div>
       );
     }

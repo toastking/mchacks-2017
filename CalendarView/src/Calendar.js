@@ -78,12 +78,20 @@ class Calendar extends Component {
     render() {
         return (
             <div className="Calendar">
-                {monthNames[this.state.month]}
-                <br />
-                <input type="button" onClick={this.minusOneMonth}/>
-                {this.state.year}
-                <input type="button" onClick={this.plusOneMonth}/>
-                <br />
+                <div id="MonthDisplay">
+                    <h1>{monthNames[this.state.month]}</h1>
+                </div>
+                <div id="MonthNav col-xs-12">
+                    <div className="col-xs-1">
+                        <input type="button" onClick={this.minusOneMonth}/>
+                    </div>
+                    <div className="col-xs-10">
+                        {this.state.year}
+                    </div>
+                    <div className="col-xs-1">
+                        <input type="button" onClick={this.plusOneMonth}/>
+                    </div>
+                </div>
                 <CalendarGrid days={this.daysToDisplay(this.state.year, this.state.month)} />
             </div>
         );

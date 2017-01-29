@@ -61,7 +61,7 @@ class Post extends Component {
 
   render() {
     return (
-        <div id="Login" className="container">
+        <div id="Post" className="container">
             <p id="title">Untitled</p>
             <script>
                 //var dateformat = require('dateformat');

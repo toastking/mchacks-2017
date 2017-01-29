@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import CalendarGrid from './CalendarGrid';
+import './Calendar.css';
 
 var monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
@@ -78,10 +79,10 @@ class Calendar extends Component {
     render() {
         return (
             <div className="Calendar">
-                <div id="MonthDisplay">
+                <div id="MonthDisplay" className="col-md-12">
                     <h1>{monthNames[this.state.month]}</h1>
                 </div>
-                <div id="MonthNav col-xs-12">
+                <div id="MonthNav" className="col-md-12">
                     <div className="col-xs-1">
                         <input type="button" onClick={this.minusOneMonth}/>
                     </div>
@@ -92,7 +93,7 @@ class Calendar extends Component {
                         <input type="button" onClick={this.plusOneMonth}/>
                     </div>
                 </div>
-                <CalendarGrid days={this.daysToDisplay(this.state.year, this.state.month)} />
+                <CalendarGrid days={this.daysToDisplay(this.state.year, this.state.month)} month={this.state.month} year={this.state.year}/>
             </div>
         );
     }

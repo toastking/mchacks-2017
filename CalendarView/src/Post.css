@@ -1,7 +1,8 @@
 /* page entry for journal */
-body {
+#Post {
     background: #674EA7;
     padding: 50px;
+    height: 100%;
 }
 .editable {
     background: #8e7cc3;

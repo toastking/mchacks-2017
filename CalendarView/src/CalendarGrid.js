@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 import CalendarRow from './CalendarRow'
+import './CalendarGrid.css'
+
+var dayNames = ['Su', 'M', 'Tu', 'W', 'Th', 'F', 'Sa']
 
 class CalendarGrid extends Component {
     splitArray(size) {
@@ -14,18 +17,28 @@ class CalendarGrid extends Component {
 
     renderWeeks() {
         return this.splitArray(7).map(dayChunk => (
-            <CalendarRow key={dayChunk} days={dayChunk} />
+            <CalendarRow key={dayChunk} days={dayChunk} month={this.props.month} year={this.props.year}/>
+        ));
+    }
+
+    renderDays() {
+        return dayNames.map(day => (
+            <div className="dayLabel" key={day}>
+                <h4>{day}</h4>
+            </div>
         ));
     }
 
     render() {
         return (
-            <div className="CalendarGrid col-md-12">
+            <div id="CalendarGrid" className="col-md-12">
+                <div className="col-md-12">
+                    {this.renderDays()}
+                </div>
                 {this.renderWeeks()}
             </div>
         );
     }
-
 }
 
 export default CalendarGrid;

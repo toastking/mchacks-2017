@@ -7,20 +7,27 @@ class LoginForm extends Component {
 
   constructor(props){
     super(props);
-    this.done = props.done;
     this.signIn = this.signIn.bind(this);
   }
 
   signIn(){
         var email = $("#username").val(),
         password = $("#password").val();
-        firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+        var success = true;
+
+        var done = this.props.done;
+
+        firebase.auth().signInWithEmailAndPassword(email, password).then(
+            function() {
+                done();
+        })
+        .catch(function(error) {
           // Handle Errors here.
           var errorCode = error.code;
           var errorMessage = error.message;
           alert(errorMessage);
+          success = false;
         });
-        this.done();
   }
   render() {
     return (

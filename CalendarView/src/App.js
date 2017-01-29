@@ -7,7 +7,7 @@ import Post from './Post';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {userStatus: 'calendar'}
+    this.state = {userStatus: 'login'}
   }
 
   render() {

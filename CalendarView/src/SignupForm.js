@@ -1,10 +1,30 @@
 import React, {Component} from 'react';
 import './Login.css';
+import $ from 'jquery';
+import jQuery from 'jquery';
+import * as firebase from 'firebase';
+
+// export for others scripts to use
+window.$ = $;
+window.jQuery = jQuery;
+
 
 class SignupForm extends Component {
+    createAccount(){
+
+      var email = $("#email").text,
+      password = $("#password").text;
+      firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // ...
+});
+    }
+
   render() {
     return (
-        <form id="signup-form" action="#" method="post" role="form">
+        <form id="signup-form" action="#"  role="form">
             <h2>Sign Up</h2>
             <div className="form-group">
                 <input type="text" name="username" id="username" tabIndex="1" className="form-control" placeholder="Name"/>
@@ -23,11 +43,11 @@ class SignupForm extends Component {
                 <div className="col-sm-6 col-sm-offset-3">
                     <input type="submit" name="signup-submit" id="signup-submit" tabIndex="4" className="form-control btn btn-signup" value="Sign Up"/>
                 </div>
-                </div>
             </div>
         </form>
     )
   }
 };
+
 
 export default SignupForm;

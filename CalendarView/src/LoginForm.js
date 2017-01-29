@@ -16,7 +16,7 @@ class LoginForm extends Component {
                 <input id="checkbox1" type="checkbox" name="remember"/>
                 <label htmlFor="checkbox1">Remember Me</label>   
             </div>
-            <div className="col-xs-6 form-group pull-right">     
+            <div className="col-xs-6 form-group pull-right">
                     <input type="submit" name="login-submit" id="login-submit" tabIndex="4" className="form-control btn btn-login" value="Log In"/>
             </div>
         </form>

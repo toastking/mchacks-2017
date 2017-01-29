@@ -8,7 +8,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.handleLogin = this.handleLogin.bind(this);
-    this.state = {userStatus: 'login'};
+    this.state = {userStatus: 'login',user:null};
     // Initialize Firebase
     var config = {
       apiKey: "AIzaSyB6H5_NMYiRAHG0KaKLJXcKcMkO_hC30Gc",
@@ -19,6 +19,7 @@ class App extends Component {
     };
     firebase.initializeApp(config);
   }
+
 
   handleLogin(){
     this.setState({'userStatus':'post'});

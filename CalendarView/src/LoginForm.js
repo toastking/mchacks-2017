@@ -38,7 +38,7 @@ this.done();
                 <label htmlFor="checkbox1">Remember Me</label>
             </div>
             <div className="col-xs-6 form-group pull-right">
-                    <input type="submit" onClick = {this.signIn} name="login-submit" id="login-submit" tabIndex="4" className="form-control btn btn-login" value="Log In"/>
+                    <input type="button" onClick = {this.signIn} name="login-submit" id="login-submit" tabIndex="4" className="form-control btn btn-login" value="Log In"/>
             </div>
         </form>
     )

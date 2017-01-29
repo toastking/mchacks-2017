@@ -10,7 +10,7 @@ var monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July'
 class Calendar extends Component {
     constructor(props) {
         super(props);
-        var date = new Date();
+        var date = this.props.date;
         date.setDate(1);
         this.state = {month: date.getMonth(), year: date.getFullYear(), date: 1, posts:[]}
         this.minusOneMonth = this.minusOneMonth.bind(this);

@@ -7,9 +7,11 @@ import * as firebase from 'firebase';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.handleLogin = this.handleLogin.bind(this);
-    this.state = {userStatus: 'login',user:null};
-    // Initialize Firebase
+    this.state = {userStatus: 'calendar', date: new Date(), user: null}
+    this.selectedDateFromCalendar = this.selectedDateFromCalendar.bind(this);
+    this.selectedDateFromPost = this.selectedDateFromPost.bind(this);
+    this.exitPostToCalendar = this.exitPostToCalendar.bind(this);
+    this.handleLogin = this.handleLogin.bind(this);    // Initialize Firebase
     var config = {
       apiKey: "AIzaSyB6H5_NMYiRAHG0KaKLJXcKcMkO_hC30Gc",
       authDomain: "emo-journal.firebaseapp.com",
@@ -27,9 +29,16 @@ class App extends Component {
     this.selectedDate = this.selectedDate.bind(this);
   }
 
-  selectedDate(selDate) {
+  selectedDateFromCalendar(selDate) {
     this.setState({date: selDate, userStatus: 'post'});
-    console.log(selDate);
+  }
+
+  selectedDateFromPost(selDate) {
+    this.setState({date: selDate});
+  }
+
+  exitPostToCalendar() {
+    this.setState({userStatus: 'calendar'})
   }
 
   render() {
@@ -41,14 +50,14 @@ class App extends Component {
     if (this.state.userStatus === 'calendar') {
       return (
         <div className="App">
-          <Calendar selDate={this.selectedDate}/>
+          <Calendar selDate={this.selectedDateFromCalendar} date={this.state.date}/>
         </div>
       );
     }
     if (this.state.userStatus === 'post') {
       return (
         <div className="App">
-          <Post date={this.props.date}/>
+          <Post date={this.props.date} dateChange={this.selectedDateFromPost} exitPost={this.exitPostToCalendar}/>
         </div>
       );
     }

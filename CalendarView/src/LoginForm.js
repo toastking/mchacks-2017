@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './Login.css';
 import $ from 'jquery';
-import jQuery from 'jquery';
 import * as firebase from 'firebase';
 
 class LoginForm extends Component {
@@ -38,7 +37,7 @@ this.done();
                 <label htmlFor="checkbox1">Remember Me</label>
             </div>
             <div className="col-xs-6 form-group pull-right">
-                    <input type="button" onClick = {this.signIn} name="login-submit" id="login-submit" tabIndex="4" className="form-control btn btn-login" value="Log In"/>
+                    <input type="button" onClick={this.signIn} name="login-submit" id="login-submit" tabIndex="4" className="form-control btn btn-login" value="Log In"/>
             </div>
         </form>
     )

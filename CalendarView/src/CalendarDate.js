@@ -8,7 +8,6 @@ class CalendarGrid extends Component {
     }
 
     updateDate() {
-        console.log(this.props.selDate);
         this.props.selDate(this.props.day);
     }
 

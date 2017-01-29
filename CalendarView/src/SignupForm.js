@@ -43,6 +43,7 @@ class SignupForm extends Component {
                 <div className="col-sm-6 col-sm-offset-3">
                     <input type="submit" name="signup-submit" id="signup-submit" tabIndex="4" className="form-control btn btn-signup" value="Sign Up"/>
                 </div>
+                </div>
             </div>
         </form>
     )

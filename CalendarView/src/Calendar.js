@@ -29,7 +29,7 @@ class Calendar extends Component {
 
     selectedDate(selDate) {
         this.setState({date: selDate});
-        console.log(selDate);
+        this.props.selDate(new Date(this.state.year, this.state.month, this.state.date))
     }
 
     daysInMonth(year, month) {

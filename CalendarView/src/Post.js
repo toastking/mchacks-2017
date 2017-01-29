@@ -27,6 +27,10 @@ class Post extends Component {
   */
   }
 
+  componentDidMount() {
+      this.retrievePost();
+  }
+
     /* State changing functions.
 
     TODO: Implement a cancel button.
@@ -49,13 +53,13 @@ class Post extends Component {
             console.error('no user signed in ');
         }
 
+        var dateformat = require('dateformat');
+        var date = this.props.date;
+        date = dateformat(date, "mmddyyyy");
+
         var txt = document.getElementById("post").innerText;
-        console.log("Printing Text");
-        console.log(txt);
-        this.database.ref('user/'+user.uid+'/posts').push({
-          text:txt,
-          date:this.props.date.toString(),
-          sentiment:null
+        this.database.ref('user/'+user.uid+'/posts/'+date.toString()).set({
+          text:txt
         });
     }
 
@@ -103,6 +107,23 @@ class Post extends Component {
     return (<p id="title">{date}</p>);
   }
 
+  retrievePost() {
+      var user = firebase.auth().currentUser;
+
+      var dateformat = require('dateformat');
+        var date = this.props.date;
+        console.log(date);
+        date = dateformat(date, "mmddyyyy");
+      
+      var text = firebase.database().ref('user/'+user.uid+'/posts/'+date.toString());
+      console.log(text);
+      if (text) {
+          document.getElementById("post").innerText = text;
+      } else {
+          // do nothing
+      }
+  }
+
   render() {
     return (
         <div id="Login" className="container">
@@ -119,5 +140,3 @@ class Post extends Component {
 }
 
 export default Post;
-
-// mattdelsig@me.com farkle777

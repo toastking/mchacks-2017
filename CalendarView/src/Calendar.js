@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import CalendarGrid from './CalendarGrid';
 import './Calendar.css';
+import * as firebase from 'firebase';
+import $ from 'jquery';
+import jQuery from 'jquery';
 
 var monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
@@ -9,10 +12,38 @@ class Calendar extends Component {
         super(props);
         var date = new Date();
         date.setDate(1);
-        this.state = {month: date.getMonth(), year: date.getFullYear(), date: 1}
+        this.state = {month: date.getMonth(), year: date.getFullYear(), date: 1, posts:[]}
         this.minusOneMonth = this.minusOneMonth.bind(this);
         this.plusOneMonth = this.plusOneMonth.bind(this);
         this.selectedDate = this.selectedDate.bind(this);
+        this.componentWillMount = this.componentWillMount.bind(this);
+        this.setPosts = this.setPosts.bind(this);
+        this.database = firebase.database();
+    }
+
+    setPosts(data){
+      var posts = this.state.posts;
+      posts.push(data);
+      console.log(posts);
+      this.setState({posts:posts});
+    }
+    componentWillMount(){
+
+      var user = firebase.auth().currentUser;
+
+        if (user) {
+            // User is signed in.
+            var ref = this.database.ref('/user/'+user.uid+'/posts');
+            ref.on('child_added',function(data){
+              this.setPosts(data);
+            }.bind(this));
+            ref.on('child_changed',function(data){
+              console.log(data);
+            });
+        } else {
+            console.error('no user signed in ');
+        }
+
     }
 
     daysBeforeMonth(year, month) {

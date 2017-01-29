@@ -36,10 +36,20 @@ class App extends Component {
     this.setState({date: selDate});
   }
 
+
   exitPostToCalendar() {
     this.setState({userStatus: 'calendar'})
   }
 
+ signout(){
+    firebase.auth().signOut().then(function() {
+            console.log('Signed Out');
+    }, function(error) {
+        console.error('Sign Out Error', error);
+  });
+ }
+
+  
   render() {
     if (this.state.userStatus === 'login') {
       return (<div className="App">
@@ -49,7 +59,7 @@ class App extends Component {
     if (this.state.userStatus === 'calendar') {
       return (
         <div className="App">
-          <Calendar selDate={this.selectedDateFromCalendar} date={this.state.date}/>
+          <Calendar selDate={this.selectedDateFromCalendar} date={this.state.date} signout={this.signout}/>
         </div>
       );
     }

@@ -14,7 +14,7 @@ class SignupForm extends Component {
 
       var email = $("#email").val(),
       password = $("#password").val(),
-      confirm = $("#confirm-password");
+      confirm = $("#confirm-password").val();
       
       if(email&&password===confirm){
         firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {

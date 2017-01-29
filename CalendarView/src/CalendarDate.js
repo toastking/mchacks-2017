@@ -21,7 +21,7 @@ class CalendarGrid extends Component {
 
         else {
             return (
-                <div className="CalendarDate" onClick={this.updateDate}>
+                <div className="CalendarDate InMonth" onClick={this.updateDate}>
                     <h4>{this.props.day}</h4>
                 </div>
             );

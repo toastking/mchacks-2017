@@ -2,7 +2,7 @@
     height: 13vw;
 }
 
-.NotInMonth {
-    background-color: cyan;
+.InMonth {
+    background-color: #8e7cc3;
     color: white;
 }

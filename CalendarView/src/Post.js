@@ -18,6 +18,7 @@ class Post extends Component {
       this.savePost = this.savePost.bind(this);
       this.updateText = this.updateText.bind(this);
       this.database = firebase.database();
+      this.backButton = this.backButton.bind(this);
 
       /* The following functions are for changing application state. 
       Call this.props.dateChange(date()) to change the date you are currently on.
@@ -53,6 +54,10 @@ class Post extends Component {
           date:null,
           sentiment:null
         });
+    }
+
+    backButton() {
+        this.props.exitPost();
     }
 
 
@@ -103,6 +108,7 @@ class Post extends Component {
                   <button type="button" className="btn btn-danger pull-right">Delete</button>
                 {this.renderOptions()}
             </div>
+            <button type="button" className="btn btn-danger pull-right" onClick={this.backButton}>Back</button>
         </div>
         );
     }

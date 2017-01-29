@@ -1,13 +1,16 @@
 #MonthDisplay {
     text-align: center;
+    color: white;
 }
 
 #MonthNav {
     text-align: center;
+    color: white;
 }
 
 #CalendarGrid {
     margin-top: 20px;
+    color: white;
 }
 
 

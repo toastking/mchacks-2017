@@ -13,6 +13,7 @@ class Calendar extends Component {
         this.minusOneMonth = this.minusOneMonth.bind(this);
         this.plusOneMonth = this.plusOneMonth.bind(this);
         this.selectedDate = this.selectedDate.bind(this);
+        this.today = this.today.bind(this);
     }
 
     daysBeforeMonth(year, month) {
@@ -81,6 +82,11 @@ class Calendar extends Component {
         this.setState({month: currentMonth, year: currentYear})
     }
 
+    today() {
+        var date = new Date();
+        this.setState({month: date.getMonth(), year: date.getFullYear()})
+    }
+
     render() {
         return (
             <div className="Calendar">
@@ -89,13 +95,22 @@ class Calendar extends Component {
                 </div>
                 <div id="MonthNav" className="col-md-12">
                     <div className="col-xs-1">
-                        <input type="button" onClick={this.minusOneMonth}/>
+                        <button type="button" className="btn btn-info" onClick={this.minusOneMonth}>
+                            Prev
+                        </button>
                     </div>
                     <div className="col-xs-10">
                         {this.state.year}
                     </div>
                     <div className="col-xs-1">
-                        <input type="button" onClick={this.plusOneMonth}/>
+                        <button type="button" className="btn btn-info" onClick={this.plusOneMonth}>
+                            Next
+                        </button>
+                    </div>
+                    <div className="col-xs-12">
+                        <button type="button" className="btn btn-info" onClick={this.today}>
+                            Today
+                        </button>
                     </div>
                 </div>
                 <CalendarGrid days={this.daysToDisplay(this.state.year, this.state.month)} month={this.state.month} year={this.state.year} selDate={this.selectedDate}/>

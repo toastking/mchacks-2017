@@ -22,7 +22,8 @@ class App extends Component {
 
 
   handleLogin(){
-    this.state = {userStatus: 'calendar', date: new Date()}
+    debugger;
+    this.setState({userStatus: 'calendar', date: new Date()});
     this.selectedDate = this.selectedDate.bind(this);
   }
 

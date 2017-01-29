@@ -19,10 +19,12 @@ class Post extends Component {
 
   editPost() {
     this.setState({oldText: this.state.text, editable: true});
+    document.getElementById("post").contentEditable = 'true';
   }
 
   savePost() {
     this.setState({editable: false});
+    document.getElementById("post").contentEditable = 'false';
   }
 
   updateText(event) {
@@ -59,22 +61,22 @@ class Post extends Component {
     }
   }
 
+  makeTitleDate() {
+    var dateformat = require('dateformat');
+    var date = new Date();
+    date = dateformat(date, "dddd, mmmm dS, yyyy");
+
+    return (<p id="title">{date.toString()}</p>);
+  }
+
   render() {
     return (
         <div id="Login" className="container">
-            <p id="title">Untitled</p>
-            <script>
-                //var dateformat = require('dateformat');
-                var date = new Date();
-                //dateFormat(date, "dddd, mmmm dS, yyyy");
-                document.getElementById("title").innerHTML = date.toString();
-            </script>
-            <div className="editable" id="post">                
-                <div>
-                {this.renderPost()}
+                {this.makeTitleDate()}
+            <div className="editable" id="post">{this.state.text}</div>
+            <div className="editable">
                   <button type="button" className="btn btn-danger pull-right">Delete</button>
                 {this.renderOptions()}
-                </div>
             </div>
         </div>
     )

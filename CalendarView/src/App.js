@@ -8,12 +8,21 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {userStatus: 'calendar', date: new Date()}
-    this.selectedDate = this.selectedDate.bind(this);
+    this.selectedDateFromCalendar = this.selectedDateFromCalendar.bind(this);
+    this.selectedDateFromPost = this.selectedDateFromPost.bind(this);
+    this.exitPostToCalendar = this.exitPostToCalendar.bind(this);
   }
 
-  selectedDate(selDate) {
+  selectedDateFromCalendar(selDate) {
     this.setState({date: selDate, userStatus: 'post'});
-    console.log(selDate);
+  }
+
+  selectedDateFromPost(selDate) {
+    this.setState({date: selDate});
+  }
+
+  exitPostToCalendar() {
+    this.setState({userStatus: 'calendar'})
   }
 
   render() {
@@ -25,14 +34,14 @@ class App extends Component {
     if (this.state.userStatus === 'calendar') {
       return (
         <div className="App">
-          <Calendar selDate={this.selectedDate}/>
+          <Calendar selDate={this.selectedDateFromCalendar} date={this.state.date}/>
         </div>
       );
     }
     if (this.state.userStatus === 'post') {
       return (
         <div className="App">
-          <Post date={this.props.date}/>
+          <Post date={this.props.date} dateChange={this.selectedDateFromPost} exitPost={this.exitPostToCalendar}/>
         </div>
       );
     }

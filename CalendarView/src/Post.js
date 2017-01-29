@@ -10,6 +10,12 @@ class Post extends Component {
     this.editPost = this.editPost.bind(this)
     this.savePost = this.savePost.bind(this)
     this.updateText = this.updateText.bind(this)
+
+    /* The following functions are for changing application state. 
+        Call this.props.dateChange(date()) to change the date you are currently on.
+        Call this.props.exitPost() to bring the user back to calendar view.
+        this.props.date is the current date. Please use this to set the date title instead of new Date().
+    */
   }
 
   /* State changing functions. 

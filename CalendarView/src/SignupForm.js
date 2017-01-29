@@ -28,17 +28,10 @@ class SignupForm extends Component {
         <form id="signup-form" action="#"  role="form">
             <h2>Sign Up</h2>
             <div className="form-group">
-<<<<<<< HEAD
-                <input type="text" name="username" id="username" tabIndex="1" className="form-control" placeholder="Name" />
-            </div>
-            <div className="form-group">
-                <input type="email" name="email" id="email" tabIndex="1" className="form-control" placeholder="Email Address" />
-=======
                 <input type="text" name="username" id="username" tabIndex="1" className="form-control" placeholder="Name"/>
             </div>
             <div className="form-group">
                 <input type="email" name="email" id="email" tabIndex="1" className="form-control" placeholder="Email Address"/>
->>>>>>> b9c11817b0b91b3274a6ff049e96c0720c438040
             </div>
             <div className="form-group">
                 <input type="password" name="password" id="password" tabIndex="2" className="form-control" placeholder="Password"/>

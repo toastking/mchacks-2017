@@ -18,7 +18,7 @@ class LoginForm extends Component {
   // Handle Errors here.
   var errorCode = error.code;
   var errorMessage = error.message;
-  console.error(errorMessage);
+  alert(errorMessage);
 });
 this.done();
   }

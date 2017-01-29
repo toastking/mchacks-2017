@@ -23,7 +23,6 @@ class App extends Component {
   }
 
   handleLogin(){
-    debugger;
     this.setState({userStatus: 'calendar', date: new Date()});
     this.selectedDate = this.selectedDate.bind(this);
   }

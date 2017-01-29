@@ -24,7 +24,7 @@ class Calendar extends Component {
             dayList.push(-1 * i);
         }
         return dayList;
-        
+
     }
 
     selectedDate(selDate) {

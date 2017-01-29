@@ -30,7 +30,6 @@ class Calendar extends Component {
     }
     
     componentWillMount(){
-
       var user = firebase.auth().currentUser;
 
         if (user) {

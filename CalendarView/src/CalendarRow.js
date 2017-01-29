@@ -8,7 +8,7 @@ class CalendarRow extends Component {
         var i;
         for (i = 0; i < 7; i++) {
             var date = this.props.days[i];
-            weekElements.push((<CalendarDate key={date} day={date} inMonth={true} written={true} selDate={this.props.selDate}/>));
+            weekElements.push((<CalendarDate key={date} day={date} inMonth={true} month={this.props.month} year={this.props.year} written={true} selDate={this.props.selDate}/>));
         }
         return weekElements;
     }

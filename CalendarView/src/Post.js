@@ -121,7 +121,6 @@ class Post extends Component {
       textRef.on('value', function (snapshot) {
           text = snapshot.val();
       });
-      console.log(text['text']);
       if (text) {
           document.getElementById("post").innerText = text['text'];
       } else {

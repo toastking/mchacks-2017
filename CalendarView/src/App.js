@@ -7,7 +7,7 @@ import * as firebase from 'firebase';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {userStatus: 'calendar', date: new Date(), user: null}
+    this.state = {userStatus: 'login', date: new Date(), user: null, signedOut: null, incorrectPass: null}
     this.selectedDateFromCalendar = this.selectedDateFromCalendar.bind(this);
     this.selectedDateFromPost = this.selectedDateFromPost.bind(this);
     this.exitPostToCalendar = this.exitPostToCalendar.bind(this);
@@ -21,7 +21,6 @@ class App extends Component {
     };
     firebase.initializeApp(config);
   }
-
 
   handleLogin(){
     debugger;
@@ -44,7 +43,7 @@ class App extends Component {
   render() {
     if (this.state.userStatus === 'login') {
       return (<div className="App">
-          <Login done={this.handleLogin} />
+          <Login done={this.handleLogin} signedOut={this.state.signedOut}/>
         </div>)
     }
     if (this.state.userStatus === 'calendar') {

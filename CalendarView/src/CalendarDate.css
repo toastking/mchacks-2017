@@ -3,3 +3,7 @@
     height: 100%;
     float: left;
 }
+
+.CalendarDate>h4 {
+    display: inline;
+}

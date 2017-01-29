@@ -101,7 +101,6 @@ class Post extends Component {
   makeTitleDate() {
     var dateformat = require('dateformat');
     var date = this.props.date;
-    console.log(date);
     date = dateformat(date, "dddd, mmmm dS, yyyy");
 
     return (<p id="title">{date}</p>);
@@ -112,7 +111,6 @@ class Post extends Component {
 
       var dateformat = require('dateformat');
         var date = this.props.date;
-        console.log(date);
         date = dateformat(date, "mmddyyyy");
       
       var text;

@@ -12,7 +12,10 @@ class Post extends Component {
     this.updateText = this.updateText.bind(this)
   }
 
-  /* State changing functions. */
+  /* State changing functions. 
+
+    TODO: Implement a cancel button.
+  */
 
   editPost() {
     this.setState({oldText: this.state.text, editable: true});

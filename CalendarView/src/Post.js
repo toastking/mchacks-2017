@@ -12,7 +12,7 @@ class Post extends Component {
     this.updateText = this.updateText.bind(this)
   }
 
-  /* State changing functions. 
+  /* State changing functions.
 
     TODO: Implement a cancel button.
   */
@@ -69,7 +69,7 @@ class Post extends Component {
                 //dateFormat(date, "dddd, mmmm dS, yyyy");
                 document.getElementById("title").innerHTML = date.toString();
             </script>
-            <div className="editable" id="post">                
+            <div className="editable" id="post">
                 <div>
                 {this.renderPost()}
                   <button type="button" className="btn btn-danger pull-right">Delete</button>

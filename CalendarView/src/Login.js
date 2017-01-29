@@ -6,9 +6,15 @@ import './Login.css';
 class Login extends Component {
   constructor(props) {
     super(props);
-    this.state = {signup: false}
-    this.changeToLogin = this.changeToLogin.bind(this)
-    this.changeToSignup = this.changeToSignup.bind(this)
+    this.state = {signup: false};
+    this.changeToLogin = this.changeToLogin.bind(this);
+    this.changeToSignup = this.changeToSignup.bind(this);
+    this.done = props.done;
+    this.doneLogin = this.doneLogin.bind(this);
+  }
+
+  doneLogin(){
+    this.done();
   }
 
   renderForm() {
@@ -16,7 +22,7 @@ class Login extends Component {
         return <SignupForm/>
     }
     else {
-        return <LoginForm/>
+        return <LoginForm done={this.doneLogin}/>
     }
   }
 

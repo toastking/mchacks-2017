@@ -12,12 +12,13 @@ window.jQuery = jQuery;
 class SignupForm extends Component {
     createAccount(){
 
-      var email = $("#email").text,
-      password = $("#password").text;
+      var email = $("#email").val(),
+      password = $("#password").val();
       firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
   // Handle Errors here.
   var errorCode = error.code;
   var errorMessage = error.message;
+  console.error(errorMessage);
   // ...
 });
     }
@@ -27,10 +28,10 @@ class SignupForm extends Component {
         <form id="signup-form" action="#"  role="form">
             <h2>Sign Up</h2>
             <div className="form-group">
-                <input type="text" name="username" id="username" tabIndex="1" className="form-control" placeholder="Name" value=""/>
+                <input type="text" name="username" id="username" tabIndex="1" className="form-control" placeholder="Name" />
             </div>
             <div className="form-group">
-                <input type="email" name="email" id="email" tabIndex="1" className="form-control" placeholder="Email Address" value=""/>
+                <input type="email" name="email" id="email" tabIndex="1" className="form-control" placeholder="Email Address" />
             </div>
             <div className="form-group">
                 <input type="password" name="password" id="password" tabIndex="2" className="form-control" placeholder="Password"/>

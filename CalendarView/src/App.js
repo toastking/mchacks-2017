@@ -21,7 +21,7 @@ class App extends Component {
   }
 
   handleLogin(){
-    this.setState({'userStatus':'calendar'});
+    this.setState({'userStatus':'post'});
   }
 
   render() {

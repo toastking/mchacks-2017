@@ -24,7 +24,7 @@ class Calendar extends Component {
             dayList.unshift(date.getDate());
         }
         return dayList;
-        
+
     }
 
     daysInMonth(year, month) {

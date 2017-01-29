@@ -1,6 +1,7 @@
 # mchacks-2017
 
-Instructions to run. 
+##Instructions to run. 
+___
   To run the application please have node package manager installed.  
   Please navigate to the Calender View Folder.  
   Afterwards run the following commands  

@@ -43,6 +43,7 @@ class App extends Component {
   }
 
  signout(){
+   console.log("hello");
     firebase.auth().signOut().then(function() {
             console.log('Signed Out');
     }, function(error) {

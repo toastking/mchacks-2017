@@ -18,6 +18,7 @@ class Post extends Component {
       this.savePost = this.savePost.bind(this);
       this.updateText = this.updateText.bind(this);
       this.database = firebase.database();
+      this.backButton = this.backButton.bind(this);
 
       /* The following functions are for changing application state. 
       Call this.props.dateChange(date()) to change the date you are currently on.
@@ -55,6 +56,10 @@ class Post extends Component {
         });
     }
 
+    backButton() {
+        this.props.exitPost();
+    }
+
 
     updateText(event) {
         this.setState({text: event.target.value});
@@ -79,7 +84,7 @@ class Post extends Component {
             );
         } else {
             return (
-                <button type="button" className="btn btn-primary pull-right" onClick={this.editPost}>
+                <button type="button" className="btn btn-info pull-right" onClick={this.editPost}>
                     Edit
                 </button>
             );
@@ -88,10 +93,11 @@ class Post extends Component {
 
   makeTitleDate() {
     var dateformat = require('dateformat');
-    var date = new Date();
+    var date = this.props.date;
+    console.log(date);
     date = dateformat(date, "dddd, mmmm dS, yyyy");
 
-    return (<p id="title">{date.toString()}</p>);
+    return (<p id="title">{date}</p>);
   }
 
   render() {
@@ -100,7 +106,8 @@ class Post extends Component {
                 {this.makeTitleDate()}
             <div className="editable" id="post">{this.state.text}</div>
             <div className="editable">
-                  <button type="button" className="btn btn-danger pull-right">Delete</button>
+                <button type="button" className="btn btn-default pull-right" onClick={this.backButton}>Back</button>
+                <button type="button" className="btn btn-primary pull-right">Delete</button>
                 {this.renderOptions()}
             </div>
         </div>
@@ -109,3 +116,5 @@ class Post extends Component {
 }
 
 export default Post;
+
+// mattdelsig@me.com farkle777

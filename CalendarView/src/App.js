@@ -57,7 +57,7 @@ class App extends Component {
     if (this.state.userStatus === 'post') {
       return (
         <div className="App">
-          <Post date={this.props.date} dateChange={this.selectedDateFromPost} exitPost={this.exitPostToCalendar}/>
+          <Post date={this.state.date} dateChange={this.selectedDateFromPost} exitPost={this.exitPostToCalendar}/>
         </div>
       );
     }

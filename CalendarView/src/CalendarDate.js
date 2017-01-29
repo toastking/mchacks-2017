@@ -14,14 +14,14 @@ class CalendarGrid extends Component {
     render() {
         if (this.props.day < 0) {
             return (
-                <div className="CalendarDate NotInMonth">
+                <div className="CalendarDate">
                 </div>
             );
         }
 
         else {
             return (
-                <div className="CalendarDate" onClick={this.updateDate}>
+                <div className="CalendarDate InMonth" onClick={this.updateDate}>
                     <h4>{this.props.day}</h4>
                 </div>
             );

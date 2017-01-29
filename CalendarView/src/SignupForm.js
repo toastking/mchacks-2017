@@ -13,15 +13,24 @@ class SignupForm extends Component {
     createAccount(){
 
       var email = $("#email").val(),
-      password = $("#password").val();
-      firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-  // Handle Errors here.
-  var errorCode = error.code;
-  var errorMessage = error.message;
-  console.error(errorMessage);
-  // ...
-});
+      password = $("#password").val(),
+      confirm = $("#confirm-password");
+      
+      if(email&&password===confirm){
+        firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                console.error(errorMessage);
+                // ...
+        });
+    } else{
+        if(!email){
+            alert("Please enter an email");
+        }
+        alert("Passwords must match");
     }
+}
 
   render() {
     return (
@@ -42,7 +51,7 @@ class SignupForm extends Component {
             <div className="form-group">
                 <div className="row">
                 <div className="col-sm-6 col-sm-offset-3">
-                    <input type="submit" name="signup-submit" id="signup-submit" tabIndex="4" className="form-control btn btn-signup" value="Sign Up"/>
+                    <input type="submit" name="signup-submit" onClick={this.createAccount} id="signup-submit" tabIndex="4" className="form-control btn btn-signup" value="Sign Up"/>
                 </div>
                 </div>
             </div>

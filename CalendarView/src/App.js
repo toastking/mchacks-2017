@@ -42,7 +42,6 @@ class App extends Component {
   }
 
   render() {
-    this.state.userStatus='login';
     if (this.state.userStatus === 'login') {
       return (<div className="App">
           <Login done={this.handleLogin} />

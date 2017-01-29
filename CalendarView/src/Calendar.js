@@ -121,7 +121,7 @@ class Calendar extends Component {
     render() {
         return (
             <div className="Calendar">
-                <button type="button" className="btn btn-primary pull-right">Logout</button>
+                <button type="button" className="btn btn-primary pull-right" onClick={this.props.signOut}>Logout</button>
                 <div id="MonthDisplay" className="col-md-12">
                     <h1>{monthNames[this.state.month]}</h1>
                 </div>
